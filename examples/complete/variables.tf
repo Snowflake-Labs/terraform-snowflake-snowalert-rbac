@@ -10,32 +10,32 @@ variable "snowalert_app_role" {
   description = "Role."
 }
 
-variable "admin_role" {
+variable "security_admin_role" {
   type        = string
   description = "Role."
 }
 
-variable "integration_owner_role" {
+variable "security_integration_owner_role" {
   type        = string
   description = "Role."
 }
 
-variable "ingest_role" {
+variable "security_ingest_role" {
   type        = string
   description = "Role."
 }
 
-variable "alerting_role" {
+variable "security_alerting_role" {
   type        = string
   description = "Role."
 }
 
-variable "modeling_role" {
+variable "security_modeling_role" {
   type        = string
   description = "Role."
 }
 
-variable "monitoring_role" {
+variable "security_monitoring_role" {
   type        = string
   description = "Role."
 }

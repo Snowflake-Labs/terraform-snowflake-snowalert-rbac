@@ -1,12 +1,12 @@
 resource "snowflake_warehouse_grant" "snowalert_warehouse_grant_usage_to_roles" {
-  provider = snowflake.admin_role
+  provider = snowflake.security_admin_role
 
   warehouse_name = "SNOWALERT_WAREHOUSE"
   privilege      = "USAGE"
 
   roles = [
-    var.monitoring_role,
-    var.alerting_role,
-    var.ingest_role,
+    var.security_monitoring_role,
+    var.security_alerting_role,
+    var.security_ingest_role,
   ]
 }
