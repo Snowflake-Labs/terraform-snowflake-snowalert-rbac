@@ -18,6 +18,5 @@ module "snowalert_grants" {
 
   providers = {
     snowflake.admin_role = snowflake.admin_role
-    aws                  = aws
   }
 }
