@@ -81,7 +81,6 @@ resource "snowflake_schema_grant" "data_schema_grant_create_table" {
 
 #   privilege = "SELECT"
 #   roles = [
-#     var.snowalert_app_role,
 #     var.security_alerting_role
 #   ]
 
@@ -96,7 +95,6 @@ resource "snowflake_schema_grant" "data_schema_grant_create_table" {
 
 #   privilege = "SELECT"
 #   roles = [
-#     var.snowalert_app_role,
 #     var.security_alerting_role
 #   ]
 
@@ -111,7 +109,6 @@ resource "snowflake_schema_grant" "data_schema_grant_create_table" {
 
 #   privilege = "REFERENCES"
 #   roles = [
-#     var.snowalert_app_role,
 #     var.security_alerting_role
 #   ]
 
@@ -125,7 +122,7 @@ resource "snowflake_schema_grant" "data_schema_grant_create_table" {
 #   schema_name   = snowflake_schema.data.name
 
 #   privilege = "USAGE"
-#   roles     = [var.snowalert_app_role]
+#   roles     = []
 
 #   on_future = true
 # }

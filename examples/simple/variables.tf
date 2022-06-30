@@ -5,11 +5,6 @@ variable "snowflake_account" {
 }
 
 # Roles
-variable "snowalert_app_role" {
-  type        = string
-  description = "Role."
-}
-
 variable "security_admin_role" {
   type        = string
   description = "Role."

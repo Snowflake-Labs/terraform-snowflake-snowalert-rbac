@@ -1,11 +1,6 @@
 # Required Variables
 
 # Roles
-variable "snowalert_app_role" {
-  type        = string
-  description = "Role."
-}
-
 variable "security_ingest_role" {
   type        = string
   description = "Role."
