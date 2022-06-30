@@ -1,4 +1,4 @@
-resource "snowflake_schema_grant" "data_grant_create_view_alerting_role" {
+resource "snowflake_schema_grant" "data_schema_grant_create_view" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -10,7 +10,7 @@ resource "snowflake_schema_grant" "data_grant_create_view_alerting_role" {
   ]
 }
 
-resource "snowflake_schema_grant" "data_grant_create_external_function" {
+resource "snowflake_schema_grant" "data_schema_grant_create_function" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -22,7 +22,7 @@ resource "snowflake_schema_grant" "data_grant_create_external_function" {
   ]
 }
 
-resource "snowflake_schema_grant" "snowalert_data_schema_grant_usage" {
+resource "snowflake_schema_grant" "data_schema_grant_usage" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -34,7 +34,7 @@ resource "snowflake_schema_grant" "snowalert_data_schema_grant_usage" {
   ]
 }
 
-resource "snowflake_schema_grant" "data_grant_create_table_alerting_role" {
+resource "snowflake_schema_grant" "data_schema_grant_create_table" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
