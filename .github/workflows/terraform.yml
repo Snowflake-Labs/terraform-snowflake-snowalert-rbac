@@ -27,7 +27,7 @@ jobs:
         working-directory: examples/complete/
 
   terraform_build_simple:
-    name: Terraform
+    name: Terraform Build Simple
     runs-on: ubuntu-latest
     env:
       SNOWFLAKE_USER: dummy_user
