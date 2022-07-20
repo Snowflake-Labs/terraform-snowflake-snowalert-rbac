@@ -8,6 +8,7 @@ module "snowalert_grants" {
   security_alerting_role   = var.security_alerting_role
   security_modeling_role   = var.security_modeling_role
   security_monitoring_role = var.security_monitoring_role
+  snowalert_role_name      = var.snowalert_role_name
 
   # Schemas
   data_schema_name       = var.data_schema_name
