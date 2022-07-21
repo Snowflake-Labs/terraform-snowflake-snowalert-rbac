@@ -36,4 +36,17 @@ resource "snowflake_schema_grant" "snowalert_monitoring_schema_grant_create_func
   ]
 }
 
+resource "snowflake_function_grant" "monitoring_functions_grant_ownership" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.monitoring_schema_name
+
+  privilege = "OWNERSHIP"
+  roles = [
+    var.security_monitoring_role,
+  ]
+
+  on_future = true
+}
 
