@@ -176,6 +176,6 @@ resource "snowflake_schema_grant" "results_schema_grant_create_task" {
 
   privilege = "CREATE TASK"
   roles = [
-    var.security_modeling_role,
+    var.security_alerting_role,
   ]
 }
