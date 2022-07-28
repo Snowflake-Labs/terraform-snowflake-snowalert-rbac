@@ -167,3 +167,15 @@ resource "snowflake_schema_grant" "results_grant_create_view_alerting_role" {
     var.security_alerting_role,
   ]
 }
+
+resource "snowflake_schema_grant" "results_schema_grant_create_task" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.results_schema_name
+
+  privilege = "CREATE TASK"
+  roles = [
+    var.security_modeling_role,
+  ]
+}

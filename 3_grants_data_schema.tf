@@ -46,3 +46,14 @@ resource "snowflake_schema_grant" "data_schema_grant_create_table" {
   ]
 }
 
+resource "snowflake_schema_grant" "data_schema_grant_create_task" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.data_schema_name
+
+  privilege = "CREATE TASK"
+  roles = [
+    var.security_ingest_role,
+  ]
+}

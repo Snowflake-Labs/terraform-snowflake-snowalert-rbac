@@ -80,3 +80,15 @@ resource "snowflake_schema_grant" "rules_schema_grant_create_view" {
     var.security_modeling_role,
   ]
 }
+
+resource "snowflake_schema_grant" "rules_schema_grant_create_task" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.rules_schema_name
+
+  privilege = "CREATE TASK"
+  roles = [
+    var.security_modeling_role,
+  ]
+}

@@ -38,3 +38,35 @@ resource "snowflake_function_grant" "monitoring_functions_grant_ownership" {
   on_future = true
 }
 
+resource "snowflake_function_grant" "monitoring_functions_grant_usage" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.monitoring_schema_name
+
+  privilege = "USAGE"
+  roles = [
+    var.security_alerting_role,
+    var.security_ingest_role,
+    var.security_modeling_role,
+  ]
+
+  on_future = true
+}
+
+
+resource "snowflake_table_grant" "monitoring_tables_grant_insert" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.monitoring_schema_name
+
+  privilege = "INSERT"
+  roles = [
+    var.security_alerting_role,
+    var.security_ingest_role,
+    var.security_modeling_role,
+  ]
+
+  on_future = true
+}
