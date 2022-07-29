@@ -1,3 +1,19 @@
+resource "snowflake_schema_grant" "monitoring_schema_grant_usage" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.monitoring_schema_name
+
+  privilege = "USAGE"
+  roles = [
+    var.security_alerting_role,
+    var.security_ingest_role,
+    var.security_modeling_role,
+  ]
+
+  on_future = true
+}
+
 resource "snowflake_schema_grant" "snowalert_monitoring_schema_grant_create_task" {
   provider = snowflake.security_admin_role
 
