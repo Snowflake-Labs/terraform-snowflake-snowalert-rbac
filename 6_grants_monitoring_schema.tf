@@ -10,8 +10,6 @@ resource "snowflake_schema_grant" "monitoring_schema_grant_usage" {
     var.security_ingest_role,
     var.security_modeling_role,
   ]
-
-  on_future = true
 }
 
 resource "snowflake_schema_grant" "snowalert_monitoring_schema_grant_create_task" {
