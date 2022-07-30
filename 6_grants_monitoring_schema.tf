@@ -68,7 +68,6 @@ resource "snowflake_function_grant" "monitoring_functions_grant_usage" {
   on_future = true
 }
 
-
 resource "snowflake_table_grant" "monitoring_tables_grant_insert" {
   provider = snowflake.security_admin_role
 
