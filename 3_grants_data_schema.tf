@@ -44,6 +44,7 @@ resource "snowflake_schema_grant" "data_schema_grant_create_table" {
 
   privilege = "CREATE TABLE"
   roles = [
+    var.security_ingest_role,
     var.security_alerting_role,
   ]
 }
@@ -57,18 +58,5 @@ resource "snowflake_schema_grant" "data_schema_grant_create_task" {
   privilege = "CREATE TASK"
   roles = [
     var.security_ingest_role,
-  ]
-}
-
-resource "snowflake_schema_grant" "data_schema_grant_create_table" {
-  provider = snowflake.security_admin_role
-
-  database_name = var.snowalert_database_name
-  schema_name   = var.data_schema_name
-
-  privilege = "CREATE TABLE"
-  roles = [
-    var.security_ingest_role,
-    var.security_alerting_role,
   ]
 }
