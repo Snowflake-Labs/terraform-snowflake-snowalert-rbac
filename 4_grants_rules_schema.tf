@@ -104,3 +104,15 @@ resource "snowflake_schema_grant" "rules_schema_grant_create_table" {
     var.security_modeling_role,
   ]
 }
+
+resource "snowflake_schema_grant" "rules_schema_grant_create_tag" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.rules_schema_name
+
+  privilege = "CREATE TAG"
+  roles = [
+    var.security_modeling_role,
+  ]
+}
