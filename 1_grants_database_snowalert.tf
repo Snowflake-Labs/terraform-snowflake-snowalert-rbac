@@ -9,6 +9,7 @@ resource "snowflake_database_grant" "snowalert_db_grant_usage" {
     var.security_alerting_role,
     var.security_modeling_role,
     var.security_monitoring_role,
+    var.app_snowalert_role,
   ]
 
   with_grant_option = false
