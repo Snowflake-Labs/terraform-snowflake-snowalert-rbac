@@ -65,3 +65,9 @@ variable "monitoring_schema_name" {
   description = "Schemas for all the monitoring infrastructure for SnowAlert."
   default     = "MONITORING"
 }
+
+variable "app_snowalert_role" {
+  type        = string
+  description = "Role."
+  default = "APP_SNOWALERT"
+}

@@ -55,6 +55,12 @@ variable "snowalert_database_name" {
   default     = "SNOWALERT"
 }
 
+variable "snowalert_role_name" {
+  type        = string
+  description = "Role used to grant ownership to all Snowalert objects."
+  default     = "APP_SNOWALERT"
+}
+
 # Schemas
 variable "data_schema_name" {
   type        = string
