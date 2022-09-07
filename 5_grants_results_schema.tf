@@ -27,6 +27,20 @@ resource "snowflake_table_grant" "results_tables_grant_ownership" {
   on_future = true
 }
 
+resource "snowflake_table_grant" "results_tables_grant_insert" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.results_schema_name
+
+  privilege = "INSERT"
+  roles = [
+    var.app_snowalert_role,
+  ]
+
+  on_future = true
+}
+
 resource "snowflake_procedure_grant" "results_procedures_grant_ownership_alerting" {
   provider = snowflake.security_admin_role
 
