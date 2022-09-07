@@ -143,7 +143,6 @@ resource "snowflake_schema_grant" "results_grant_create_task_alerting_role" {
   ]
 }
 
-
 resource "snowflake_schema_grant" "snowalert_schemas_grant_usage_alerting_role" {
   provider = snowflake.security_admin_role
 
@@ -177,5 +176,17 @@ resource "snowflake_schema_grant" "results_schema_grant_create_task" {
   privilege = "CREATE TASK"
   roles = [
     var.security_alerting_role,
+  ]
+}
+
+resource "snowflake_schema_grant" "results_schema_grant_usage" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.data_schema_name
+
+  privilege = "USAGE"
+  roles = [
+    var.app_snowalert_role,
   ]
 }
