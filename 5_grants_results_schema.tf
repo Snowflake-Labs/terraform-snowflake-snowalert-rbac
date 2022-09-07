@@ -183,7 +183,7 @@ resource "snowflake_schema_grant" "results_schema_grant_usage" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
-  schema_name   = var.data_schema_name
+  schema_name   = var.results_schema_name
 
   privilege = "USAGE"
   roles = [
