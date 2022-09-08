@@ -69,5 +69,5 @@ variable "monitoring_schema_name" {
 variable "app_snowalert_role" {
   type        = string
   description = "Role."
-  default = "APP_SNOWALERT"
+  default     = "APP_SNOWALERT"
 }
