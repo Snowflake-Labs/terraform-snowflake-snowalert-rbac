@@ -41,7 +41,7 @@ resource "snowflake_table_grant" "results_tables_grant_insert" {
   on_future = true
 }
 
-resource "snowflake_procedure_grant" "results_procedures_grant_ownership_alerting" {
+resource "snowflake_procedure_grant" "results_procedures_grant_ownership" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -55,7 +55,7 @@ resource "snowflake_procedure_grant" "results_procedures_grant_ownership_alertin
   on_future = true
 }
 
-resource "snowflake_function_grant" "results_functions_grant_ownership_alerting" {
+resource "snowflake_function_grant" "results_functions_grant_ownership" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -69,7 +69,7 @@ resource "snowflake_function_grant" "results_functions_grant_ownership_alerting"
   on_future = true
 }
 
-resource "snowflake_stream_grant" "results_streams_grant_ownership_alerting" {
+resource "snowflake_stream_grant" "results_streams_grant_ownership" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -83,7 +83,7 @@ resource "snowflake_stream_grant" "results_streams_grant_ownership_alerting" {
   on_future = true
 }
 
-resource "snowflake_task_grant" "results_tasks_grant_ownership_alerting" {
+resource "snowflake_task_grant" "results_tasks_grant_ownership" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -97,7 +97,7 @@ resource "snowflake_task_grant" "results_tasks_grant_ownership_alerting" {
   on_future = true
 }
 
-resource "snowflake_schema_grant" "results_grant_create_table_alerting_role" {
+resource "snowflake_schema_grant" "results_grant_create_table" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -121,7 +121,7 @@ resource "snowflake_schema_grant" "results_grant_create_external_function_alerti
   ]
 }
 
-resource "snowflake_schema_grant" "results_grant_create_procedure_alerting_role" {
+resource "snowflake_schema_grant" "results_grant_create_procedure" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -133,7 +133,7 @@ resource "snowflake_schema_grant" "results_grant_create_procedure_alerting_role"
   ]
 }
 
-resource "snowflake_schema_grant" "results_grant_create_stream_alerting_role" {
+resource "snowflake_schema_grant" "results_grant_create_stream" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -145,7 +145,7 @@ resource "snowflake_schema_grant" "results_grant_create_stream_alerting_role" {
   ]
 }
 
-resource "snowflake_schema_grant" "results_grant_create_task_alerting_role" {
+resource "snowflake_schema_grant" "results_grant_create_task" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -157,7 +157,7 @@ resource "snowflake_schema_grant" "results_grant_create_task_alerting_role" {
   ]
 }
 
-resource "snowflake_schema_grant" "snowalert_schemas_grant_usage_alerting_role" {
+resource "snowflake_schema_grant" "results_grant_usage" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -166,10 +166,11 @@ resource "snowflake_schema_grant" "snowalert_schemas_grant_usage_alerting_role" 
   privilege = "USAGE"
   roles = [
     var.security_alerting_role,
+    var.app_snowalert_role,
   ]
 }
 
-resource "snowflake_schema_grant" "results_grant_create_view_alerting_role" {
+resource "snowflake_schema_grant" "results_grant_create_view" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -190,17 +191,5 @@ resource "snowflake_schema_grant" "results_schema_grant_create_task" {
   privilege = "CREATE TASK"
   roles = [
     var.security_alerting_role,
-  ]
-}
-
-resource "snowflake_schema_grant" "results_schema_grant_usage" {
-  provider = snowflake.security_admin_role
-
-  database_name = var.snowalert_database_name
-  schema_name   = var.results_schema_name
-
-  privilege = "USAGE"
-  roles = [
-    var.app_snowalert_role,
   ]
 }
