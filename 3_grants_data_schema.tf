@@ -47,6 +47,7 @@ resource "snowflake_schema_grant" "data_schema_grant_create_table" {
   roles = [
     var.security_ingest_role,
     var.security_alerting_role,
+    var.security_modeling_role,
   ]
 }
 
