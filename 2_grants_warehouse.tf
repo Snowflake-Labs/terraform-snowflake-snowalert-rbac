@@ -4,10 +4,11 @@ resource "snowflake_warehouse_grant" "snowalert_warehouse_grant_usage_to_roles" 
   warehouse_name = "SNOWALERT_WAREHOUSE"
   privilege      = "USAGE"
 
-  roles = [
+  roles = flatten([
     var.security_monitoring_role,
     var.security_alerting_role,
     var.security_ingest_role,
     var.security_modeling_role,
-  ]
+    var.warehouse_external_roles,
+  ])
 }

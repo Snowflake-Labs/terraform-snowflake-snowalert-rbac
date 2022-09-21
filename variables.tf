@@ -71,3 +71,9 @@ variable "app_snowalert_role" {
   description = "Role."
   default     = "APP_SNOWALERT"
 }
+
+variable "warehouse_external_roles" {
+  type        = list(string)
+  description = "List of additional roles that need SnowAlert warehouse usage permissions."
+  default     = []
+}
