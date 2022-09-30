@@ -63,7 +63,7 @@ resource "snowflake_schema_grant" "data_schema_grant_create_task" {
   ]
 }
 
-resource "snowflake_schema_grant" "data_schema_grant_select" {
+resource "snowflake_table_grant" "data_schema_tables_grant_select" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
