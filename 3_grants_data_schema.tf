@@ -62,17 +62,3 @@ resource "snowflake_schema_grant" "data_schema_grant_create_task" {
     var.security_ingest_role,
   ]
 }
-
-resource "snowflake_table_grant" "data_schema_tables_grant_select" {
-  provider = snowflake.security_admin_role
-
-  database_name = var.snowalert_database_name
-  schema_name   = var.data_schema_name
-
-  privilege = "SELECT"
-  roles = [
-    var.security_modeling_role,
-  ]
-
-  on_future = true
-}
