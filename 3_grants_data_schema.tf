@@ -73,4 +73,6 @@ resource "snowflake_schema_grant" "data_schema_grant_select" {
   roles = [
     var.security_modeling_role,
   ]
+
+  on_future = true
 }
