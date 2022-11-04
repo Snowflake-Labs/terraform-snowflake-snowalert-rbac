@@ -19,6 +19,7 @@ resource "snowflake_schema_grant" "data_schema_grant_create_function" {
   privilege = "CREATE FUNCTION"
   roles = [
     var.security_alerting_role,
+    var.security_ingest_role,
   ]
 }
 
