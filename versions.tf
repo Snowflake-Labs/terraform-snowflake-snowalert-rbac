@@ -4,7 +4,7 @@ terraform {
   required_providers {
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
-      version = "~> 0.49.0"
+      version = "~> 0.48.0"
 
       configuration_aliases = [
         snowflake.security_admin_role,
