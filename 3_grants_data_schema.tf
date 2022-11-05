@@ -23,6 +23,18 @@ resource "snowflake_schema_grant" "data_schema_grant_create_function" {
   ]
 }
 
+resource "snowflake_schema_grant" "data_schema_grant_create_stage" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.data_schema_name
+
+  privilege = "CREATE STAGE"
+  roles = [
+    var.security_ingest_role,
+  ]
+}
+
 resource "snowflake_schema_grant" "data_schema_grant_usage" {
   provider = snowflake.security_admin_role
 
