@@ -115,7 +115,7 @@ resource "snowflake_schema_grant" "results_grant_create_external_function_alerti
   database_name = var.snowalert_database_name
   schema_name   = var.results_schema_name
 
-  privilege = "CREATE FUNCTION"
+  privilege = "CREATE EXTERNAL FUNCTION"
   roles = [
     var.security_alerting_role,
   ]
