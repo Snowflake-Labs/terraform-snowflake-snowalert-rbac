@@ -100,7 +100,7 @@ resource "snowflake_schema_grant" "data_schema_grant_create_task" {
   ]
 }
 
-resource "snowflake_schema_grant" "data_schema_grant_select" {
+resource "snowflake_view_grant" "data_views_grant_select" {
   provider = snowflake.security_admin_role
 
   database_name = var.snowalert_database_name
@@ -110,4 +110,6 @@ resource "snowflake_schema_grant" "data_schema_grant_select" {
   roles = [
     var.security_modeling_role,
   ]
+
+  on_future = true
 }
