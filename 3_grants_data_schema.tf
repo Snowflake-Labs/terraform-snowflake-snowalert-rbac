@@ -107,6 +107,7 @@ resource "snowflake_schema_grant" "data_schema_grant_select" {
   schema_name   = var.data_schema_name
 
   privilege = "SELECT"
-    var.security_modeling_role
+  roles = [
+    var.security_modeling_role,
   ]
 }
