@@ -77,3 +77,9 @@ variable "warehouse_external_roles" {
   description = "List of additional roles that need SnowAlert warehouse usage permissions."
   default     = []
 }
+
+variable "enable_multiple_grants" {
+  type        = bool
+  description = "Allow grants outside of this module"
+  default     = true
+}

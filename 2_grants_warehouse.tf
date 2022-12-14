@@ -11,4 +11,6 @@ resource "snowflake_warehouse_grant" "snowalert_warehouse_grant_usage_to_roles" 
     var.security_modeling_role,
     var.warehouse_external_roles,
   ])
+
+  enable_multiple_grants = var.enable_multiple_grants
 }

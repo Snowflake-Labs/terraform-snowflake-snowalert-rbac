@@ -13,6 +13,7 @@ resource "snowflake_database_grant" "snowalert_db_grant_usage" {
   ]
 
   with_grant_option = false
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_database_grant" "snowalert_db_grant_create_schema" {
@@ -30,4 +31,5 @@ resource "snowflake_database_grant" "snowalert_db_grant_create_schema" {
   ]
 
   with_grant_option = false
+  enable_multiple_grants = var.enable_multiple_grants
 }

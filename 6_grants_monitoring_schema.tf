@@ -10,6 +10,8 @@ resource "snowflake_schema_grant" "monitoring_schema_grant_usage" {
     var.security_ingest_role,
     var.security_modeling_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "snowalert_monitoring_schema_grant_create_task" {
@@ -24,6 +26,7 @@ resource "snowflake_schema_grant" "snowalert_monitoring_schema_grant_create_task
   ]
 
   with_grant_option = false
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "snowalert_monitoring_schema_grant_create_function" {
@@ -36,6 +39,8 @@ resource "snowflake_schema_grant" "snowalert_monitoring_schema_grant_create_func
   roles = [
     var.security_monitoring_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_function_grant" "monitoring_functions_grant_ownership" {
@@ -66,6 +71,7 @@ resource "snowflake_function_grant" "monitoring_functions_grant_usage" {
   ]
 
   on_future = true
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_table_grant" "monitoring_tables_grant_insert" {
@@ -82,4 +88,5 @@ resource "snowflake_table_grant" "monitoring_tables_grant_insert" {
   ]
 
   on_future = true
+  enable_multiple_grants = var.enable_multiple_grants
 }

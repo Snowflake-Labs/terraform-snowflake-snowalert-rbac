@@ -26,6 +26,7 @@ resource "snowflake_view_grant" "rules_views_grant_select" {
   ]
 
   on_future = true
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_table_grant" "rules_tables_grant_ownership" {
@@ -53,6 +54,7 @@ resource "snowflake_schema_grant" "rules_schema_grant_usage" {
   ]
 
   with_grant_option = false
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_view_grant" "rules_view_grant_references" {
@@ -67,6 +69,7 @@ resource "snowflake_view_grant" "rules_view_grant_references" {
   ]
 
   on_future = true
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "rules_schema_grant_create_view" {
@@ -79,6 +82,8 @@ resource "snowflake_schema_grant" "rules_schema_grant_create_view" {
   roles = [
     var.security_modeling_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "rules_schema_grant_create_task" {
@@ -91,6 +96,8 @@ resource "snowflake_schema_grant" "rules_schema_grant_create_task" {
   roles = [
     var.security_modeling_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "rules_schema_grant_create_table" {
@@ -103,6 +110,8 @@ resource "snowflake_schema_grant" "rules_schema_grant_create_table" {
   roles = [
     var.security_modeling_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "rules_schema_grant_create_tag" {
@@ -115,4 +124,6 @@ resource "snowflake_schema_grant" "rules_schema_grant_create_tag" {
   roles = [
     var.security_modeling_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
