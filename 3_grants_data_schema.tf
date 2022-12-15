@@ -8,6 +8,8 @@ resource "snowflake_schema_grant" "data_schema_grant_create_view" {
   roles = [
     var.security_alerting_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "data_schema_grant_create_function" {
@@ -21,6 +23,8 @@ resource "snowflake_schema_grant" "data_schema_grant_create_function" {
     var.security_alerting_role,
     var.security_ingest_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "data_schema_grant_create_stage" {
@@ -33,6 +37,8 @@ resource "snowflake_schema_grant" "data_schema_grant_create_stage" {
   roles = [
     var.security_ingest_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "data_schema_grant_create_pipe" {
@@ -45,6 +51,8 @@ resource "snowflake_schema_grant" "data_schema_grant_create_pipe" {
   roles = [
     var.security_ingest_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "data_schema_grant_create_stream" {
@@ -57,6 +65,8 @@ resource "snowflake_schema_grant" "data_schema_grant_create_stream" {
   roles = [
     var.security_ingest_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "data_schema_grant_usage" {
@@ -72,6 +82,8 @@ resource "snowflake_schema_grant" "data_schema_grant_usage" {
     var.security_ingest_role,
     var.app_snowalert_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "data_schema_grant_create_table" {
@@ -86,6 +98,8 @@ resource "snowflake_schema_grant" "data_schema_grant_create_table" {
     var.security_alerting_role,
     var.security_modeling_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "data_schema_grant_create_task" {
@@ -98,4 +112,6 @@ resource "snowflake_schema_grant" "data_schema_grant_create_task" {
   roles = [
     var.security_ingest_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }

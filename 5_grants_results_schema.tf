@@ -38,7 +38,8 @@ resource "snowflake_table_grant" "results_tables_grant_insert" {
     var.app_snowalert_role,
   ]
 
-  on_future = true
+  on_future              = true
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_procedure_grant" "results_procedures_grant_ownership" {
@@ -107,6 +108,8 @@ resource "snowflake_schema_grant" "results_grant_create_table" {
   roles = [
     var.security_alerting_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "results_grant_create_external_function_alerting_role" {
@@ -119,6 +122,8 @@ resource "snowflake_schema_grant" "results_grant_create_external_function_alerti
   roles = [
     var.security_alerting_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "results_grant_create_procedure" {
@@ -131,6 +136,8 @@ resource "snowflake_schema_grant" "results_grant_create_procedure" {
   roles = [
     var.security_alerting_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "results_grant_create_stream" {
@@ -143,6 +150,8 @@ resource "snowflake_schema_grant" "results_grant_create_stream" {
   roles = [
     var.security_alerting_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "results_grant_create_task" {
@@ -155,6 +164,8 @@ resource "snowflake_schema_grant" "results_grant_create_task" {
   roles = [
     var.security_alerting_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "results_grant_usage" {
@@ -168,6 +179,8 @@ resource "snowflake_schema_grant" "results_grant_usage" {
     var.security_alerting_role,
     var.app_snowalert_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "results_grant_create_view" {
@@ -180,6 +193,8 @@ resource "snowflake_schema_grant" "results_grant_create_view" {
   roles = [
     var.security_alerting_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
 
 resource "snowflake_schema_grant" "results_schema_grant_create_task" {
@@ -192,4 +207,6 @@ resource "snowflake_schema_grant" "results_schema_grant_create_task" {
   roles = [
     var.security_alerting_role,
   ]
+
+  enable_multiple_grants = var.enable_multiple_grants
 }
