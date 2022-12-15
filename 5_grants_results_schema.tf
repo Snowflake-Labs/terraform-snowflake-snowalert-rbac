@@ -38,7 +38,7 @@ resource "snowflake_table_grant" "results_tables_grant_insert" {
     var.app_snowalert_role,
   ]
 
-  on_future = true
+  on_future              = true
   enable_multiple_grants = var.enable_multiple_grants
 }
 
