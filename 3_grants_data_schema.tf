@@ -28,6 +28,22 @@ resource "snowflake_schema_grant" "data_schema_grant_create_function" {
   enable_multiple_grants = var.enable_multiple_grants
 }
 
+resource "snowflake_schema_grant" "data_schema_grant_create_procedure" {
+  provider = snowflake.security_admin_role
+
+  database_name = var.snowalert_database_name
+  schema_name   = var.data_schema_name
+
+  privilege = "CREATE PROCEDURE"
+  roles = [
+    var.security_alerting_role,
+    var.security_ingest_role,
+    var.security_modeling_role,
+  ]
+
+  enable_multiple_grants = var.enable_multiple_grants
+}
+
 resource "snowflake_schema_grant" "data_schema_grant_create_stage" {
   provider = snowflake.security_admin_role
 
