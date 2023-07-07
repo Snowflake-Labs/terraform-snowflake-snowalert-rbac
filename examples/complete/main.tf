@@ -4,11 +4,11 @@ module "snowalert_grants" {
   snowalert_warehouse_name = var.snowalert_warehouse_name
   snowalert_database_name  = var.snowalert_database_name
 
-  ingest_role     = var.ingest_role
-  alerting_role   = var.alerting_role
-  modeling_role   = var.modeling_role
-  monitoring_role = var.monitoring_role
-  app_snowalert_role       = var.snowalert_role_name
+  ingest_role        = var.ingest_role
+  alerting_role      = var.alerting_role
+  modeling_role      = var.modeling_role
+  monitoring_role    = var.monitoring_role
+  app_snowalert_role = var.snowalert_role_name
 
   # Schemas
   data_schema_name       = var.data_schema_name
