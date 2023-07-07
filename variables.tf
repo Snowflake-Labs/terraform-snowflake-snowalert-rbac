@@ -1,22 +1,22 @@
 # Required Variables
 
 # Roles
-variable "security_ingest_role" {
+variable "ingest_role" {
   type        = string
   description = "Role."
 }
 
-variable "security_alerting_role" {
+variable "alerting_role" {
   type        = string
   description = "Role."
 }
 
-variable "security_modeling_role" {
+variable "modeling_role" {
   type        = string
   description = "Role."
 }
 
-variable "security_monitoring_role" {
+variable "monitoring_role" {
   type        = string
   description = "Role."
 }

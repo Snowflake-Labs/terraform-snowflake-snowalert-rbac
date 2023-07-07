@@ -7,7 +7,7 @@ terraform {
       version = ">= 0.62.0"
 
       configuration_aliases = [
-        snowflake.security_admin_role,
+        snowflake.admin_role,
       ]
     }
   }
